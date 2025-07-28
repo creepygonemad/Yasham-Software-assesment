@@ -19,10 +19,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Configure Chrome options to reduce SSL errors
+# Configured Chrome options to reduce SSL errors
 chrome_options = Options()
-# Remove extension to avoid conflicts
-# chrome_options.add_extension('CFHDOJBKJHNKLBPKDAIBDCCDDILIFDDB_4_23_1_0.crx')
 chrome_options.add_argument("--ignore-ssl-errors-yes")
 chrome_options.add_argument("--ignore-certificate-errors")
 chrome_options.add_argument("--disable-web-security")
@@ -31,7 +29,7 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--log-level=3")
-# Block ads to prevent click interception
+# Blocks some  ads (not all)  to prevent click interception
 chrome_options.add_argument("--disable-popup-blocking")
 chrome_options.add_experimental_option("prefs", {
     "profile.default_content_setting_values.notifications": 2,
